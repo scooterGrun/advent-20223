@@ -9,14 +9,13 @@ class Day1 extends Day {
     return input
       .split("\r\n")
       .map((element) => this.firstAndLastDigit(element))
-      .map((e) => parseInt(e))
       .reduce((a, b) => a + b, 0)
       .toString();
   }
 
-  firstAndLastDigit(input: string) {
+  firstAndLastDigit(input: string) : number {
     const digitArray = input.split("").filter((value) => this.isNumeric(value));
-    return digitArray[0] + digitArray[digitArray.length - 1];
+    return parseInt(digitArray[0] + digitArray[digitArray.length - 1]);
   }
 
   isNumeric = (num: any) =>
